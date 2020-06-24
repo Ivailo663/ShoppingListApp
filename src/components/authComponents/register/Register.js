@@ -5,34 +5,34 @@ function Register() {
         <div className="log-reg-container">
         <h2>Register</h2>
         <div className="form-wrapper">
-            <form>
+            {/* <form> */}
                 
-{/*       
-                <div className="input-holder">
+      
+            <div className="input-holder">
                 <input type="text" name="firstName" placeholder="First name"/>
-                </div>
-                <div  className="input-holder">
+            </div>
+                
+                
+            <div className="input-holder">
                 <input type="text" name="lastName" placeholder="Last name"/>
-                </div>
-               <div  className="input-holder">
+            </div>
+               
+                
+{/*                
                <input type="email" name="email" placeholder="E-mail"/>
-               </div>
-                <div  className="input-holder">
+               
+                
                 <input type="password" name="password" placeholder="Password"/>
-                </div>
-               <div  className="input-holder">
+                
+               
                <input type="password" name="repeat-password" placeholder="Repeat password"/>
-               </div> */}
-               {/* <div className="input-holder">
-               <input type="text" name="firstName" placeholder="First name"/>
-               </div> */}
-               <div className="input-holder">
-                    <input type="text" id="fname" name="firstname" placeholder="Your name.."/>
-                    <input type="text" id="fname" name="firstname" placeholder="Your name.."/>
-                    <input type="text" id="fname" name="firstname" placeholder="Your name.."/>
-                </div>
+               
+            
+               <input type="text" name="firstName" placeholder="First name"/> */}
+               
+
                 <button>Submit</button>
-            </form>
+            {/* </form> */}
         </div>
     </div>
     )

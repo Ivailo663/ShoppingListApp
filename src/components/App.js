@@ -6,8 +6,8 @@ import "@fortawesome/free-solid-svg-icons";
 class App extends Component {
   render() {
     return (
-      <div className="wrapper">
-        <input type="text" class="input-res" />
+      <div className="main">
+        <Auth/>
       </div>
     );
   }
