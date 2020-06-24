@@ -1,0 +1,17 @@
+@import './colors_and_fonts.scss';
+
+
+@mixin h2( $color: $white, $font:$fontMain) {
+    color:$color;
+    font-weight: 400;
+    font-size:2.5rem;
+    font-family:$font;
+  }
+
+  @mixin whiteBackground($height){
+    height:$height;
+    width:100%;
+    background:$whiteTransparent;
+    border-radius:4rem 4rem 0 0;
+  }
+  
