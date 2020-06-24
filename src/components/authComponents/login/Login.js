@@ -2,7 +2,7 @@ import React from 'react'
 
 function Login() {
     return (
-        <div className="log-reg-container">
+        <div className="form-container">
             <h2>Log in</h2>
             <div className="form-wrapper">
                 <form>

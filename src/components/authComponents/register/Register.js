@@ -2,40 +2,27 @@ import React from 'react'
 
 function Register() {
     return (
-        <div className="log-reg-container">
+        <div className="form-container">
         <h2>Register</h2>
         <div className="form-wrapper">
-            {/* <form> */}
+            <form>
                 
-      
-            <div className="input-holder">
-                <input type="text" name="firstName" placeholder="First name"/>
-            </div>
-                
-                
-            <div className="input-holder">
-                <input type="text" name="lastName" placeholder="Last name"/>
-            </div>
-               
-                
-{/*                
-               <input type="email" name="email" placeholder="E-mail"/>
-               
-                
+               <div>
                 <input type="password" name="password" placeholder="Password"/>
+        
+                </div>
                 
-               
-               <input type="password" name="repeat-password" placeholder="Repeat password"/>
-               
-            
-               <input type="text" name="firstName" placeholder="First name"/> */}
-               
+               <div>
+               <input type="text" name="firstName" placeholder="First name"/>
+               </div>
+                    
+          
 
                 <button>Submit</button>
-            {/* </form> */}
+            </form>
         </div>
     </div>
     )
-}
+}   
 
 export default Register
