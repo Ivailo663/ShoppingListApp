@@ -7,22 +7,35 @@ function Register() {
         <div className="form-wrapper">
             <form>
                 
-               <div>
-                <input type="password" name="password" placeholder="Password"/>
-        
-                </div>
+      
+            <div className="input-holder">
+                <input type="text" name="firstName" placeholder="First name"/>
+            </div>
                 
-               <div>
-               <input type="text" name="firstName" placeholder="First name"/>
+                
+            <div className="input-holder">
+                <input type="text" name="lastName" placeholder="Last name"/>
+            </div>
+               
+                
+            <div className="input-holder">
+               <input type="email" name="email" placeholder="E-mail"/>
                </div>
-                    
-          
+
+               <div className="input-holder">
+                <input type="password" name="password" placeholder="Password"/>
+                 </div>
+                 <div className="input-holder">
+               <input type="password" name="repeat-password" placeholder="Repeat password"/>
+               </div>
+               
+               
 
                 <button>Submit</button>
             </form>
         </div>
     </div>
     )
-}   
+}
 
 export default Register

@@ -5,135 +5,112 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 
-// html,body{
-//     margin:0;
-//     padding:0;
-//     box-sizing: border-box;
-//     width:100%;
-//     height:100%;
-//     font-family: 'Roboto', sans-serif;
-// }
-// //GENERAL CLASSES
-// h1{
-//     margin:0;
-//     color:$white;
-// }
-// h2{
-//     @include h2;
-// }
-// //GENERAL CLASSES END
-// #app, .main{
-//     width:100%;
-//     height:100%;
-// }
-// .auth-container{
-//     width:100%;
-//     height:100%;
-//     background:$pink;
-
-//     .auth-container-inner{
-//         width:100vw;
-//         margin:0 auto;
-//         header{
-//             height:30vh;
-//         }
-//     }
-//     @media(min-width:781px) {
-//         .auth-container-inner{
-//             width:80vw;
-//         }
-//     }
-// }
-// .auth-body{
-
-//     @include whiteBackground(70vh);
-
-//     .login-container{
-//         text-align:center;
-//     }
-//     h2{
-//         @include h2($greenMain,$fontFunky);
-//         margin:0;
-//         padding:1rem;
-//     }
-//     .log-reg-container{
-//         width:33rem;
-//         margin:0 auto;
-//         text-align:center;
-//     }
-//     .form-wrapper{
-//         display:flex;
-//         flex-direction: column;
-      
-//         max-width:45rem;
-//         input{
-//             -webkit-box-shadow: 0px 2px 17px -17px rgba(0,0,0,0.75);
-//             -moz-box-shadow: 0px 2px 17px -17px rgba(0,0,0,0.75);
-//             box-shadow: 0px 2px 17px -17px rgba(0,0,0,0.75);
-//             width:100%;
-//             height:3.3rem;
-//             border:none;
-//             margin:0.7rem;
-//             border-radius:0.8rem;
-//             padding-left:1rem;
-//             &:focus, &:active{
-//                 outline:none;
-//                 border:none;
-//             }
-//             &::placeholder {
-//                 color: $greyPlaceholder;
-//                 font-size: 0.8em;
-//               }
-//         }
-//         button{
-//             width:31rem;
-//             height:3.3rem;
-//             border:none;
-//             background:$greenMain;
-//             border-radius:0.8rem;
-//             color:#fff; 
-//             font-weight:700;
-//             font-size:1.4rem;
-//             margin:0.7rem;
-//             border:none;
-//             &:focus, &:active{
-//                 outline:none;
-//                 border:none;
-//             }
-//         }
-//     }
-// }
-
-.form-wrapper{
-  padding:20px;
-  max-width:30rem;
-  display:flex;
-
-  background-color:red;
+html,body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    width:100%;
+    height:100%;
+    font-family: 'Roboto', sans-serif;
 }
-.input-holder{
-  max-width:30rem;
+*{
+    box-sizing : border-box;
 }
-input{
-  -webkit-box-shadow: 0px 2px 17px -17px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 2px 17px -17px rgba(0,0,0,0.75);
-  box-shadow: 0px 2px 17px -17px rgba(0,0,0,0.75);
-  
-  width:100%;
-  height:3.3rem;
-  border:none;
-  margin:1.7rem 0;
-  border-radius:0.8rem;
+#index{
+    height:100%;
+    display:flex;
+    justify-content: center;
+}
+//GENERAL CLASSES
+h1{
+color:yellow;
+}
+@media(max-width:800px){
+    h1{
+        color:green; 
+    }
+   
+}
+h2{
+    @include h2
+}
+//GENERAL CLASSES END
+.main{
+    width:100%;
+    height:100%;
+    // background:red;
 
-  &:focus, &:active{
-      outline:none;
-      border:none;
-  }
-  &::placeholder {
-      color: $greyPlaceholder;
-      font-size: 0.8em;
+}
+.auth-container{
+    width:100vw;
+    height:100%;
+    background:blue;
+    @media only screen and (max-width: 600px){
+        .auth-container{
+            width:80vw;
+            background:green;
+            border:1px solid red;
+        }
     }
 }
-button{
-  max-width:30rem;
+.form-container{
+    text-align: center;
+    h2{
+        @include h2($greenMain,$fontFunky);
+        margin:0;
+    }
+    .form-wrapper{
+
+    max-width:30rem;
+    margin: 0 auto;
+    display:flex;
+
+      form{
+  
+          width:35rem;
+          padding:1rem;
+              input{
+                  -webkit-box-shadow: 0px 2px 17px -17px rgba(0,0,0,0.75);
+                  -moz-box-shadow: 0px 2px 17px -17px rgba(0,0,0,0.75);
+                  box-shadow: 0px 2px 17px -17px rgba(0,0,0,0.75);
+                  width:100%;
+                  height:3.3rem;
+                  border:none;
+                  margin:0.7rem 0;
+                  border-radius:0.8rem;
+                  padding:0.5rem;
+                  &:focus, &:active{
+                      outline:none;
+                      border:none;
+                  }
+                  &::placeholder {
+                      color: $greyPlaceholder;
+                      font-size: 0.9rem;
+                  }
+              }
+          button{
+              width:100%;
+              height:3.3rem;
+              border:none;
+              background:$greenMain;
+              border-radius:0.8rem;
+              color:#fff; 
+              font-weight:700;
+              font-size:1.4rem;
+              margin-top:0.9rem;
+              border:none;
+              &:focus, &:active{
+                  outline:none;
+                  border:none;
+              }
+              @media sreen and (max-width: 761px){
+                button{
+               
+                    background:black;
+                    color:green;
+                }
+            }
+          }
+  }   
+  }
 }
