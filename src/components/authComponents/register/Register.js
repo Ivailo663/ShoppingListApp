@@ -6,18 +6,14 @@ function Register() {
         <h2>Register</h2>
         <div className="form-wrapper">
             <form>
-                
-      
             <div className="input-holder">
                 <input type="text" name="firstName" placeholder="First name"/>
             </div>
-                
-                
+                    
             <div className="input-holder">
                 <input type="text" name="lastName" placeholder="Last name"/>
             </div>
                
-                
             <div className="input-holder">
                <input type="email" name="email" placeholder="E-mail"/>
                </div>
@@ -28,11 +24,12 @@ function Register() {
                  <div className="input-holder">
                <input type="password" name="repeat-password" placeholder="Repeat password"/>
                </div>
-               
-               
-
+            
                 <button>Submit</button>
             </form>
+  
+            <p className="toggle-form">I have an account</p>
+        
         </div>
     </div>
     )

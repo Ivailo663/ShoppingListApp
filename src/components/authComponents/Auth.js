@@ -15,18 +15,16 @@ class Auth extends Component {
     render() {
         return (
             <div className="auth-container">
-                <div className="auth-container-inner">
                     <header>
                         <h1>
                         Build your grocery list with a few clicks
-
                         </h1>
                     </header>
                     <section className="auth-body">
                         {!true?<Login/>: <Register/>}
                     </section>   
-                </div>
             </div>
+        
         )
     }
 }
