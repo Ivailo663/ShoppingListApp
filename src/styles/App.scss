@@ -9,15 +9,17 @@ html,body{
     margin:0;
     padding:0;
     box-sizing: border-box;
-
     font-family: 'Roboto', sans-serif;
+    height: 100%;
 }
 *{
     box-sizing : border-box;
+    padding:0;
+    margin:0;
 }
 //GENERAL CLASSES
 h1{
-color:yellow;
+color:$white;
 margin:0;
 }
 
@@ -27,13 +29,13 @@ h2{
 //GENERAL CLASSES END
 .main{
     width:100vw;
-    background:grey;
+    background:$pink;
 
 
     .main-inner{
         width:100vw;
         margin:0 auto;
-        background:$pink;
+        
     }
  
         @media (min-width: 600px){
@@ -81,7 +83,7 @@ h2{
 
     padding:calc(1rem - 1vw); 
     max-width:20rem;
-    margin: 2rem auto;
+    margin: 0 auto;
     display:flex;
     flex-flow:column;
     text-align:right;
