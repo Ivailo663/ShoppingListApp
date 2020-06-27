@@ -1,15 +1,12 @@
 @import './colors_and_fonts.scss';
 @import './mixins.scss';
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-
 
 html,body{
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: $fontMain;
     height: 100%;
 }
 *{
@@ -25,6 +22,28 @@ margin:0;
 
 h2{
     @include h2;
+}
+.cheese{
+    position: absolute;
+    opacity: 0.5;
+    width: 13rem;
+    left: 0;
+    top: 3rem;
+}
+
+.bread{
+    position: absolute;
+    opacity: 0.3;
+    width: 13rem;
+    right: 0;
+    bottom: 3rem;
+}
+.salat{
+    position: absolute;
+    opacity: 0.5;
+    width: 13rem;
+    right: 0;
+    bottom: 0;
 }
 //GENERAL CLASSES END
 .main{
@@ -53,9 +72,15 @@ h2{
 }
 .auth-container{
     width:100%;
-
+    position: relative;
     header{
        height:30vh;
+       position: relative;
+       h1{
+           font-weight:bold;
+           padding: 3.5rem 0.5rem;
+           font-size: 4.3rem;
+       }
     }
     section{
         height:auto;
@@ -68,7 +93,9 @@ h2{
 
         }
     }
-
+    .auth-body{
+        position: relative;
+    }
 }
 
 
@@ -78,7 +105,6 @@ h2{
         @include h2($greenMain,$fontFunky);
         margin:0;
         padding:4vmin;
-
     }
     .form-wrapper{
 
@@ -92,9 +118,7 @@ h2{
       form{
           width:100%;
               input{
-                -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-                -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-                box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+                @include shadow;
                   width:100%;
                   height:2.8rem;
                   border:none;
@@ -121,9 +145,7 @@ h2{
               font-size:1.4rem;
               margin-top:0.4rem;
               border:none;
-              -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-              -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-              box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+              @include shadow;
               &:focus, &:active{
                   outline:none;
                   border:none;
@@ -155,9 +177,7 @@ h2{
         position: absolute;
         background:$whiteDirty;
         width:2.5rem;
-        top: 50%;  
-        left: 50%; 
-        transform: translate(-50%, -50%);
+        @include absoluteCenter
     }
     }
   .social-media-options{
@@ -168,17 +188,13 @@ h2{
   .social-media-option{
       width:3rem;
       height:3rem;
-      -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-      -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+      @include shadow;
       border-radius:0.8rem;
       position: relative;
       margin:0.6rem;
       img{
           position: absolute;
-          top: 50%;  
-          left: 50%; 
-          transform: translate(-50%, -50%);
+          @include absoluteCenter
        
       }
   }

@@ -8,6 +8,7 @@ class App extends Component {
     return (
       <div className="main">
         <div className="main-inner">
+        
         <Auth/>
         </div>
       </div>
