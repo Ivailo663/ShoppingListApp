@@ -15,35 +15,38 @@ html,body{
 *{
     box-sizing : border-box;
 }
-#index{
-    background:$pink;
-    display:flex;
-    justify-content: center;
-}
 //GENERAL CLASSES
 h1{
 color:yellow;
 margin:0;
 }
-@media(max-width:800px){
-    h1{
-        color:green; 
-    }
-   
-}
+
 h2{
-    // @include h2;
-    // color:red
+    @include h2;
 }
 //GENERAL CLASSES END
 .main{
     width:100vw;
-    // height:100vh;
+    background:grey;
+
+
+    .main-inner{
+        width:100vw;
+        margin:0 auto;
+        background:$pink;
+    }
+ 
+        @media (min-width: 600px){
+            .main-inner{
+                width:80vw;
+            }
+        }
+    
 
 }
-@media only screen and (min-width: 600px){
+@media (max-width: 600px){
     .main{
-        width:80vw;
+        width:100vw;
     }
 }
 .auth-container{
@@ -53,10 +56,16 @@ h2{
        height:30vh;
     }
     section{
-        height:70vh;
+        height:auto;
         background:$whiteDirty;
         border-radius: 2rem 2rem 0 0 ;
     }
+    @media only screen and (min-height: 600px){
+        section{
+            height:70vh;
+        }
+    }
+
 }
 
 
@@ -72,7 +81,7 @@ h2{
 
     padding:calc(1rem - 1vw); 
     max-width:20rem;
-    margin: 0 auto;
+    margin: 2rem auto;
     display:flex;
     flex-flow:column;
     text-align:right;
