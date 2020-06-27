@@ -9,6 +9,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -18,6 +26,17 @@ module.exports = {
             plugins: ["@babel/plugin-proposal-class-properties"],
           },
         },
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "svg-url-loader",
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
       },
       {
         test: /\.scss$/,

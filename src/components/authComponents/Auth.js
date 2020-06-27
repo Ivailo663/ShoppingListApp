@@ -8,11 +8,15 @@ class Auth extends Component {
         super(props)
 
         this.state = {
-            
+            haveAccount:false
         }
+    }
+    toggleForm = () =>{
+        this.setState({haveAccount:!this.state.haveAccount})
     }
 
     render() {
+        const{haveAccount} = this.state
         return (
             <div className="auth-container">
                     <header>
@@ -21,7 +25,7 @@ class Auth extends Component {
                         </h1>
                     </header>
                     <section className="auth-body">
-                        {!true?<Login/>: <Register/>}
+                        {haveAccount?<Login toggle={this.toggleForm}/> : <Register toggle={this.toggleForm}/>}
                     </section>   
             </div>
         

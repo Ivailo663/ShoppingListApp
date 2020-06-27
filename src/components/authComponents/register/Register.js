@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Register() {
+function Register(props) {
     return (
         <div className="form-container">
         <h2>Register</h2>
@@ -28,7 +28,7 @@ function Register() {
                 <button>Submit</button>
             </form>
   
-            <p className="toggle-form">I have an account</p>
+            <p className="toggle-form" onClick={props.toggle}>I have an account!</p>
         
         </div>
     </div>
