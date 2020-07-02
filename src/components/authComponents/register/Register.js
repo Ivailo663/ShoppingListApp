@@ -29,7 +29,7 @@ function Register(props) {
         </form>
 
         <p className="toggle-form" onClick={props.toggle}>
-          I have an account!
+          I have an account!<strong>Log in!</strong>
         </p>
       </div>
     </div>
