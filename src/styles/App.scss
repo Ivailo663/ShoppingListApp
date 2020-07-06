@@ -224,7 +224,7 @@ ul{
 }
 
 .list-items-container{
-  height: 60vh;
+  height: 50vh;
   overflow-y:scroll;
 }
 .list-items-container::-webkit-scrollbar {
@@ -243,7 +243,7 @@ ul{
   .list-item-wrapper{
     max-width:40rem;
     margin: 3rem auto;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 17px;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
@@ -343,13 +343,19 @@ ul{
     position: absolute;
     width: 4rem;
     height: 4rem;
-    right: 4rem;
+    right: 1rem;
+    bottom:2rem;
     -webkit-box-shadow: 0px 3px 25px -4px rgba(0,0,0,0.25);
     -moz-box-shadow: 0px 3px 25px -4px rgba(0,0,0,0.25);
     box-shadow: 0px 3px 25px -4px rgba(0,0,0,0.25);
     .create-list-item{
       @include absoluteCenter;
       color:$white;
+    }
+  }
+  @media only screen and (min-width: 800px) {
+    .create-list-item-holder{
+      right: 5rem;
     }
   }
 }
