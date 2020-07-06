@@ -8,6 +8,11 @@ import {
   faArrowLeft,
   faChevronLeft,
   faChevronCircleLeft,
+  faStickyNote,
+  faCheckCircle,
+  faPencilAlt,
+  faPlus,
+  faMinus
 } from "@fortawesome/free-solid-svg-icons";
 
 console.log(fas);
@@ -16,5 +21,10 @@ library.add(
   faAppleAlt,
   faArrowLeft,
   faChevronLeft,
-  faChevronCircleLeft
+  faChevronCircleLeft,
+  faStickyNote,
+  faCheckCircle,
+  faPencilAlt,
+  faPlus,
+  faMinus
 );

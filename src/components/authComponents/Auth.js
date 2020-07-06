@@ -21,7 +21,7 @@ class Auth extends Component {
         <header>
           <h1>Build your grocery list with a few clicks</h1>
         </header>
-        <section className="auth-body">
+        <section className="auth-body white-board">
           {haveAccount ? (
             <Login toggle={this.toggleForm} />
           ) : (

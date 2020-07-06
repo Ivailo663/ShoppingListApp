@@ -1,6 +1,12 @@
 import React from "react";
 import facebook from "../../../styles/gallery/icons/facebook.svg";
 import google from "../../../styles/gallery/icons/google.svg";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 function Login(props) {
   return (
     <div className="form-container">
@@ -9,7 +15,9 @@ function Login(props) {
         <form>
           <input type="email" placeholder="email" />
           <input type="password" placeholder="password" />
-          <button>Log in</button>
+
+          <Link to="/list"><button>Log in</button></Link>
+           
         </form>
         <p className="toggle-form" onClick={props.toggle}>
           Don't have an account? <strong>Sign up!</strong>

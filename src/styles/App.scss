@@ -59,10 +59,23 @@ h2 {
   right: calc(0% + 1rem);
   bottom: 2rem;
 }
+.white-board{
+  @include whiteBoard;
+}
+@media (min-width: 600px) {
+  .white-board {
+    width: 80vw !important; 
+  }
+}
+ul{
+  list-style:none;
+}
+
 //GENERAL CLASSES END
 .main {
   width: 100vw;
   background: $orange;
+  position: relative;
 
   .main-inner {
     width: 100vw;
@@ -93,13 +106,6 @@ h2 {
       padding: 1.5rem 3.5rem;
       font-size: 5vmax;
     }
-  }
-  section {
-    // height: 80vh;
-    background: $whiteTransparent;
-    border-radius: 2rem 2rem 0 0;
-    z-index: 1;
-    height: 70vh;
   }
 
   .auth-body {
@@ -188,7 +194,6 @@ h2 {
       width: 4.5rem;
     }
     span {
-      position: absolute;
       width: 2.5rem;
       @include absoluteCenter;
     }
@@ -213,8 +218,138 @@ h2 {
     position: relative;
     margin: 0.6rem;
     img {
-      position: absolute;
       @include absoluteCenter;
+    }
+  }
+}
+
+.list-items-container{
+  height: 60vh;
+  overflow-y:scroll;
+}
+.list-items-container::-webkit-scrollbar {
+  display: none;
+}
+.list-top-container{
+  .navbar{
+    // background:red;
+  }
+  .white-board{
+    width: 100vw;
+    position: absolute;
+    bottom:0;
+    padding:1rem;
+  }
+  .list-item-wrapper{
+    max-width:40rem;
+    margin: 3rem auto;
+    padding: 1rem;
+    border-radius: 17px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+    background:$white;
+    .check-circle{
+      color: $devider;
+      font-size: 2rem;
+      position: absolute;
+      right: 2rem;
+      top: 1rem;
+    }
+  }
+  .item-header{
+    border-bottom:1px solid $devider;
+    padding:0.5rem 0;
+    position: relative;
+  }
+  .item-description-holder{
+    display:flex;
+    img{
+      margin:0.5rem 1rem;
+    }
+    .item-info{
+      position: relative;
+      h3{
+        color:$fontColor;
+        margin-bottom:0.4rem;
+      }
+      ul{
+ 
+        position: absolute;
+        left: 3rem;
+        top: 1.5rem;
+
+        li{
+          // position: absolute;
+          display:flex;
+        }
+        span{
+          display: inline-block;
+          background: $yellow;
+          width: 1.7rem;
+          height: 1.7rem;
+          border-radius:50%;
+          position: relative;
+          .sticky-note-i{
+            font-size:0.8rem;
+            color:$white;
+            @include absoluteCenter;
+          }
+        }
+      }
+    }
+  }
+  .item-bottom{
+    display:flex;
+    justify-content: space-between;
+    padding:0.8rem;
+  }
+  .edit-quantity{
+    position: relative;
+    label{
+      position: absolute;
+      left: -4.3rem;
+      top: 0.3rem;
+    }
+  }
+  .quantity-body{
+    border:none;
+    background:none;
+    border-radius:16px;
+    -webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.17);
+    box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.17);
+    padding:0.2rem;
+    input{
+      width:2rem;
+      border:none;
+      background:none;
+      text-align: center;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    button{
+      border:none;
+      background:none;
+      padding: 0.2rem;
+    }
+  }
+  .create-list-item-holder{
+    background: #c2e8be;
+    border-radius: 50%;
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    right: 4rem;
+    -webkit-box-shadow: 0px 3px 25px -4px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 3px 25px -4px rgba(0,0,0,0.25);
+    box-shadow: 0px 3px 25px -4px rgba(0,0,0,0.25);
+    .create-list-item{
+      @include absoluteCenter;
+      color:$white;
     }
   }
 }
