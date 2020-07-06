@@ -24,12 +24,10 @@ h2 {
 }
 .cheese {
   position: absolute;
-  opacity: 0.5;
   width: 30vmin;
   left: calc(15% - 2rem);
   top: 3rem;
 }
-
 
 .salat {
   position: absolute;
@@ -40,14 +38,14 @@ h2 {
 }
 .tomato {
   position: absolute;
- 
+  opacity: 0.7;
   width: 35vmin;
   left: calc(3% - 1rem);
   bottom: calc(21% - 2rem);
 }
 .bananas {
   position: absolute;
-  opacity:0.8;
+  opacity:0.6;
   width: 35vmin;
   right: 10rem;
   right: calc(0% + 1rem);
@@ -55,6 +53,7 @@ h2 {
 }
 .white-board{
   @include whiteBoard;
+  padding: 5rem 0.5rem 0 0.5rem;
 }
 @media (min-width: 600px) {
   .white-board {
