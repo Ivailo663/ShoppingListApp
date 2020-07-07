@@ -12,7 +12,8 @@ import {
   faCheckCircle,
   faPencilAlt,
   faPlus,
-  faMinus
+  faMinus,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
 console.log(fas);
@@ -26,5 +27,6 @@ library.add(
   faCheckCircle,
   faPencilAlt,
   faPlus,
-  faMinus
+  faMinus,
+  faTimes
 );
