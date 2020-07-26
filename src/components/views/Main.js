@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import Navbar from '../layoutComponents/Navbar'
-import ListItem from './listItem/listItem'
+import ListItem from '../layoutComponents/listItem'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/free-solid-svg-icons";
 
-class List extends Component  {
+class Main extends Component  {
     constructor(props) {
         super(props)
 
@@ -16,10 +15,12 @@ class List extends Component  {
     render() {
         return (
             <div className="list-top-container">
-               
                 <div className="head">
-                <Navbar/>
                 </div>
+
+                {/* TODO: make that component starting point for toggling all other components  */}
+
+
                 <div className="white-board">
                     <div className="list-items-container">
                         <ListItem/>
@@ -33,4 +34,4 @@ class List extends Component  {
     }
 }
 
-export default List
+export default Main

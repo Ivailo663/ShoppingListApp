@@ -1,6 +1,6 @@
 import React from "react";
-import facebook from "../../../styles/gallery/icons/facebook.svg";
-import google from "../../../styles/gallery/icons/google.svg";
+import facebook from "../../styles/gallery/icons/facebook.svg";
+import google from "../../styles/gallery/icons/google.svg";
 import {
   BrowserRouter as Router,
   Switch,

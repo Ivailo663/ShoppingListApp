@@ -1,5 +1,5 @@
 import React from "react";
-import eggs from "../../../styles/gallery/products/eggs.png";
+import eggs from "../../styles/gallery/products/eggs.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/free-solid-svg-icons";
 
