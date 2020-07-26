@@ -16,7 +16,10 @@ class List extends Component  {
     render() {
         return (
             <div className="list-top-container">
+               
+                <div className="head">
                 <Navbar/>
+                </div>
                 <div className="white-board">
                     <div className="list-items-container">
                         <ListItem/>
