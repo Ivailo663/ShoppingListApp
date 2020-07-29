@@ -16,7 +16,7 @@ function Login(props) {
           <input type="email" placeholder="email" />
           <input type="password" placeholder="password" />
 
-          <Link to="/list"><button>Log in</button></Link>
+          <Link to="/main"><button>Log in</button></Link>
            
         </form>
         <p className="toggle-form" onClick={props.toggle}>
