@@ -20,12 +20,12 @@ h1 {
   margin: 0;
 }
 
-// h2 {
-//   color: $white;
-//   font-weight: 600;
-//   font-size: 6vmin;
-//   font-family: $fontMain;
-// }
+h2 {
+  color: $white;
+  font-weight: 600;
+  font-size: 6vmin;
+  font-family: $fontMain;
+}
 p {
   color: $pColor;
 }
@@ -123,10 +123,28 @@ ul {
       color: $white;
       font-size: 1.4rem;
     }
+    .create-list-item-holder {
+      background: #c2e8be;
+      border-radius: 50%;
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+      margin-top: -3rem;
+      -webkit-box-shadow: 0px 3px 25px -4px rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0px 3px 25px -4px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 3px 25px -4px rgba(0, 0, 0, 0.25);
+      .create-list-item {
+        @include absoluteCenter;
+        color: $white;
+      }
+    }
   }
   @media (min-width: 768px) {
     .navbar {
       width: 78vw;
+      ul {
+        width: 20rem;
+      }
     }
   }
 }
@@ -290,20 +308,21 @@ ul {
     position: relative;
     .check-circle {
       color: $devider;
-      font-size: 3.5rem;
+      font-size: 3rem;
       align-self: center;
+      margin: 0 0.5rem;
     }
-    .delete-list-item-holder {
-      width: 1.5rem;
-      height: 1.5rem;
+    .edit-list-item-holder {
+      padding: 0.9rem;
       border-radius: 50%;
       background-color: $redDelete;
       position: absolute;
       right: -0.3rem;
       top: -0.5rem;
-      .delete-list-item {
+      .edit-item {
         color: $white;
         @include absoluteCenter;
+        font-size: 0.7rem;
       }
     }
   }
@@ -313,16 +332,14 @@ ul {
     display: flex;
     justify-content: space-around;
     img {
-      margin: 0.5rem 0;
-      width: 5rem;
-      height: 5rem;
+      margin: 0.5rem 0.5rem;
+      width: 3rem;
+      height: 3rem;
+      align-self: center;
     }
   }
   .item-description-holder {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    position: relative;
+    align-self: center;
     * {
       margin: 0.4rem;
     }
@@ -334,11 +351,11 @@ ul {
     h2 {
       color: $fontColor;
       margin-bottom: 0.4rem;
-      // font-size: 0.9rem;
+      font-size: 0.9rem;
     }
   }
   .notes-wrapper {
-    margin-top: 2.2rem;
+    margin-top: 1.6rem;
     .notes-holder {
       display: flex;
     }
@@ -349,8 +366,9 @@ ul {
     span {
       display: inline-block;
       background: $yellow;
-      width: 1.7rem;
-      height: 1.7rem;
+      // width: 1.7rem;
+      // height: 1.7rem;
+      padding: 0.8rem;
       border-radius: 50%;
       position: relative;
       margin: 0 0.3rem;
@@ -361,25 +379,36 @@ ul {
       }
     }
   }
-
-  .create-list-item-holder {
-    background: #c2e8be;
-    border-radius: 50%;
-    position: relative;
-    width: 4rem;
-    height: 4rem;
-    margin-top: -3rem;
-    -webkit-box-shadow: 0px 3px 25px -4px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 0px 3px 25px -4px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 3px 25px -4px rgba(0, 0, 0, 0.25);
-    .create-list-item {
-      @include absoluteCenter;
-      color: $white;
+  @media (min-width: 768px) {
+    .item-header {
+      img {
+        width: 5rem;
+        height: 5rem;
+      }
     }
-  }
-  @media only screen and (min-width: 800px) {
-    .create-list-item-holder {
-      right: 5rem;
+    .item-description-holder {
+      h2 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+    }
+    .notes-wrapper {
+      P {
+        font-size: 1.3rem;
+      }
+      span {
+        padding: 1.2rem;
+        .sticky-note {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    .list-item-container {
+      .check-circle {
+        font-size: 4.5rem;
+      }
     }
   }
 }
