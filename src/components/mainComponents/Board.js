@@ -7,9 +7,6 @@ const Board = (props) => {
         <>
             <div className="list-items-container">
                 <ListItem/>
-                <div className="create-list-item-holder" onClick={()=>props.switch("create-item")}>
-                    <FontAwesomeIcon icon="plus" className="create-list-item"/> 
-                </div>
             </div>
         </>
     )

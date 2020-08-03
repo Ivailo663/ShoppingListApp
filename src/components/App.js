@@ -7,8 +7,6 @@ import cheese from "../styles/gallery/products/cheese.svg";
 import bananas from "../styles/gallery/products/bananas.svg";
 import tomato from "../styles/gallery/products/tomato.svg";
 import Main from './views/Main'
-import Navbar from '../components/layoutComponents/Navbar'
-// import eggs from '../styles/gallery/products/eggs.png'
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,7 +18,6 @@ class App extends Component {
   render() {
     return (
       <div className="main">
-      <Navbar/>
         <div className="main-inner">
         
           <Router>
