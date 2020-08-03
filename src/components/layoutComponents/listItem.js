@@ -6,55 +6,40 @@ import "@fortawesome/free-solid-svg-icons";
 function ListItem(props) {
   return (
     <>
-
-<div className="list-item-wrapper">
+      <div className="list-item-container">
         <div className="delete-list-item-holder">
           <FontAwesomeIcon icon="times" className="delete-list-item" />
         </div>
 
         <span className="delete-item"></span>
         <div className="item-header">
-        <img src={eggs} alt="" />
+          <img src={eggs} alt="" />
           <div className="item-description-holder">
-           
-            <div className="item-info">
-              <h3>Eggs</h3>
-              <div className="edit-quantity">
-            <label for="quantity"></label>
-            <div className="quantity-body">
-              <button>
+            <h2>Eggs</h2>
+            <div className="edit-element-holder">
+              <FontAwesomeIcon icon="pencil-alt" className="edit-element" />
+            </div>
+            <p className="element-timestamp">2 mins ago</p>
+            <p className="element-counter">3 items</p>
+          </div>
+          <div className="notes-wrapper">
+            <p className="notes">notes</p>
+            <div className="notes-holder">
               <span>
-              <FontAwesomeIcon icon="minus" className="" />
+                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
               </span>
-               
-              </button>
-              <input id="quantity" type="number" placeholder="2" />
-              <button>
               <span>
-              <FontAwesomeIcon icon="plus" className="" />
+                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
               </span>
-                
-              </button>
+              <span>
+                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
+              </span>
             </div>
           </div>
-              {/* <span>Notes</span>
-              <ul className="notes">
-                <li>
-                  <span>
-                    <FontAwesomeIcon
-                      icon="sticky-note"
-                      className="sticky-note-i"
-                    />
-                  </span>
-                </li>
-              </ul> */}
-            </div>
-          </div>
-          <FontAwesomeIcon icon={['far','check-circle']} className="check-circle" />
-        </div>
-        <div className="item-bottom">
-          <FontAwesomeIcon icon="pencil-alt" className="" />
-
+          <FontAwesomeIcon
+            icon={["far", "check-circle"]}
+            className="check-circle"
+          />
         </div>
       </div>
     </>

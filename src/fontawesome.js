@@ -1,5 +1,10 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { far,faCheckCircle as faCheckCircleRegular,faUser,faClipboard} from "@fortawesome/free-regular-svg-icons";
+import {
+  far,
+  faCheckCircle as faCheckCircleRegular,
+  faUser,
+  faClipboard,
+} from "@fortawesome/free-regular-svg-icons";
 
 import {
   fas,
@@ -14,10 +19,10 @@ import {
   faTimes,
   faStickyNote,
   faAngleLeft,
-  faBars
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
-console.log(far);
+console.log(fas);
 library.add(
   faHome,
   faAppleAlt,
