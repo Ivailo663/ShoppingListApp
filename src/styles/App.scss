@@ -32,6 +32,28 @@ p {
 .funky-font {
   font-family: $fontFunky;
 }
+button{
+  border:none;
+  background:none;
+}
+.back-btn{
+  color:$fontColor;
+  .back-arrow{
+  color:$fontColor;
+  }
+}
+.icon-holder{
+  position: absolute;
+  right:1rem;
+  .edit{
+    color:$fontColor;
+  }
+}
+input{
+  background:none;
+  outline:none;
+  border:none;
+}
 .cheese {
   position: absolute;
   width: 30vmin;
@@ -300,10 +322,8 @@ ul {
   .list-item-container {
     max-width: 35rem;
     margin: 3rem auto;
-    border-radius: 17px;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    border-radius:1rem;
+    @include shadow;
     background: $white;
     position: relative;
     .check-circle {
@@ -412,3 +432,106 @@ ul {
     }
   }
 }
+.create-element{
+  padding:1rem;
+
+  .create-element-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    .btn-holder{
+      .heart-full{
+        color:$redHeart;
+        font-size:1.2rem;
+        margin:0 0.5rem;
+      }
+      button{
+        @include shadow;
+        background:$white;
+        border-radius:0.8rem;
+        display:flex;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  form{
+    margin-top:1.5rem;
+    .search-item-icon{
+      left: 0.5rem;
+      color: #c2e8be;
+      font-size: 1.8rem;
+      position: relative;
+      top: 0.7rem;
+    }
+    .search-item{
+      border:none;
+      border-bottom:2px solid $greenMain;
+      background:none;
+      width:100%;
+      position: relative;
+      padding: 0 0 0.5rem 3rem;
+      &::placeholder{
+        font-size:1rem;
+        color:$greyPlaceholder;
+
+      }
+    }
+  }
+  .item-creator{
+    max-width:30rem;
+    @include shadow;
+    border-radius:1rem;
+    display:flex;
+    justify-content: space-around;
+    padding:1rem;
+    margin:3rem 0;
+    background:$white;
+    .left-part{
+      display: grid;
+    place-content: center;
+      img{
+        width:5rem;
+        height:5rem;
+      }
+    }
+    .right-part{
+      .item-caption-holder{
+     position: relative;
+        input{
+          font-size:1.2rem;
+          width:3rem;
+          font-weight:600;
+          color:$fontColor;
+        }
+      }
+      .quantity-wrapper{
+        display:flex;
+        flex-direction:column;
+        margin:1rem 0;
+        label{
+          font-size:0.8rem;
+          color:$fontColor;
+          margin:0.5rem 0;
+        }
+      }
+      .quantity-holder{
+        display:flex;
+        input{
+          width:3rem;
+          padding-right:0.3rem;
+          text-align: center;
+          font-size:1.5rem;
+          color:$greenMain;
+        }
+        .item-controller{
+          @include shadow;
+          padding:1rem;
+          border-radius: 0.8rem;
+          color:$greenMain;
+        }
+      }
+    }
+  }
+}
+

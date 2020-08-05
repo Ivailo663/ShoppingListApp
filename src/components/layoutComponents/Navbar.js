@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/free-solid-svg-icons";
-function Navbar() {
+function Navbar(props) {
     return (
     <div className="navbar">
     <span>

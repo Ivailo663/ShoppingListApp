@@ -10,7 +10,7 @@ class Main extends Component  {
         super(props)
 
         this.state = {
-            component:"board",
+            component:"create-item",
             header:"My List"
         }
 
@@ -42,9 +42,9 @@ class Main extends Component  {
                 <div className="white-board">
                     <h1 className="component-header funky-font">{header}</h1>
                     {this.displayComponents()}
-                    <Navbar/>
+                    <Navbar switch={(switchTo)=>this.switchComponent(switchTo)}/>
                </div>
-        
+         
             </div>
         )
     }

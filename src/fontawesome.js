@@ -20,6 +20,9 @@ import {
   faStickyNote,
   faAngleLeft,
   faBars,
+  faHeart,
+  faSearch,
+  faPen
 } from "@fortawesome/free-solid-svg-icons";
 
 console.log(fas);
@@ -38,5 +41,8 @@ library.add(
   faCheckCircleRegular,
   faUser,
   faAngleLeft,
-  faBars
+  faBars,
+  faHeart,
+  faSearch,
+  faPen
 );
