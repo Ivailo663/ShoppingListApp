@@ -139,9 +139,9 @@ function ListItem(props) {
         </div>
       </div>
       <div className="list-item-container">
-        <div className="edit-list-item-holder">
+        <span className="edit-list-item-holder">
           <FontAwesomeIcon icon="pencil-alt" className="edit-item" />
-        </div>
+        </span>
 
         <div className="item-header">
           <img src={eggs} alt="" />

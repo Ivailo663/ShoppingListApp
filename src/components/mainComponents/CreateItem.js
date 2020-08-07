@@ -3,11 +3,10 @@ import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import eggs from "../../styles/gallery/products/eggs.png";
 import "@fortawesome/free-solid-svg-icons";
-import CreateNoteModal from "../modals/CreateNoteModal";
+
 import { createItemActions } from "../../actions";
 
 const CreateItem = (props) => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
   useEffect(() => {
     console.log(props, "hey");
   });
@@ -78,28 +77,31 @@ const CreateItem = (props) => {
         <div className="add-notes" onClick={props.openCreateNoteModal}>
           <div className="add-notes-btn">
             Add notes
-            <div className="notes-holder">
-              <span className="sticky-note-orange">
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-              <span className="sticky-note-blue">
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-              <span className="sticky-note-purple">
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-            </div>
+            <ul className="notes-holder">
+              <li>
+                <span className="sticky-note-orange">
+                  <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
+                </span>
+              </li>
+              <li>
+                <span className="sticky-note-blue">
+                  <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
+                </span>
+              </li>
+              <li>
+                <span className="sticky-note-purple">
+                  <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      {isModalOpen ? <CreateNoteModal /> : null}
     </>
   );
 };
 const mapStateToProps = (state) => {
-  return {
-    isCreateNoteModalOpen: state.createItem.isCreateNoteModalOpen,
-  };
+  return {};
 };
 const actionCreators = {
   openCreateNoteModal: createItemActions.openCreateNoteModal,

@@ -105,37 +105,42 @@
       margin-bottom: 6.7rem;
     }
   }
-  .add-notes-btn {
-    text-align: center;
-    font-weight: 600;
-    color: $fontColor;
+}
+.add-notes-btn {
+  text-align: center;
+  font-weight: 600;
+  color: $fontColor;
+  display: flex;
+  flex-direction: column;
+  width: 6rem;
+  margin: 0 auto;
+}
+.notes-holder {
+  margin-top: 0.5rem;
+  display: flex;
+  span {
+    display: inline-block;
+    padding: 0.8rem;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 0.2rem;
   }
-  .notes-holder {
-    margin-top: 0.5rem;
-    span {
-      display: inline-block;
-      padding: 0.8rem;
-      border-radius: 50%;
-      position: relative;
-      margin: 0 0.2rem;
-    }
-    .sticky-note {
-      font-size: 0.8rem;
-      color: #ffffff;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .sticky-note-orange {
-      background: $yellowNote;
-    }
+  .sticky-note {
+    font-size: 0.8rem;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .sticky-note-orange {
+    background: $yellowNote;
+  }
 
-    .sticky-note-blue {
-      background: $blueNote;
-    }
-    .sticky-note-purple {
-      background: $purpleNote;
-    }
+  .sticky-note-blue {
+    background: $blueNote;
+  }
+  .sticky-note-purple {
+    background: $purpleNote;
   }
 }
