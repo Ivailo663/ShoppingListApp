@@ -14,6 +14,8 @@ body {
   padding: 0;
   margin: 0;
 }
+@import "./partials/backgroundElements";
+
 //GENERAL CLASSES
 h1 {
   color: $white;
@@ -32,57 +34,29 @@ p {
 .funky-font {
   font-family: $fontFunky;
 }
-button{
-  border:none;
-  background:none;
+button {
+  border: none;
+  background: none;
 }
-.back-btn{
-  color:$fontColor;
-  .back-arrow{
-  color:$fontColor;
+.back-btn {
+  color: $fontColor;
+  .back-arrow {
+    color: $fontColor;
   }
 }
-.icon-holder{
+.icon-holder {
   position: absolute;
-  right:1rem;
-  .edit{
-    color:$fontColor;
+  right: 1rem;
+  .edit {
+    color: $fontColor;
   }
 }
-input{
-  background:none;
-  outline:none;
-  border:none;
-}
-.cheese {
-  position: absolute;
-  width: 30vmin;
-  left: calc(15% - 2rem);
-  top: 3rem;
+input {
+  background: none;
+  outline: none;
+  border: none;
 }
 
-.salat {
-  position: absolute;
-
-  width: 30vmin;
-  right: calc(0% + 1rem);
-  top: 12rem;
-}
-.tomato {
-  position: absolute;
-  opacity: 0.7;
-  width: 35vmin;
-  left: calc(3% - 1rem);
-  bottom: calc(21% - 2rem);
-}
-.bananas {
-  position: absolute;
-  opacity: 0.6;
-  width: 35vmin;
-  right: 10rem;
-  right: calc(0% + 1rem);
-  bottom: 2rem;
-}
 .white-board {
   @include whiteBoard;
   padding: 5rem 0.5rem 0 0.5rem;
@@ -104,9 +78,20 @@ input{
 ul {
   list-style: none;
 }
-
+.sticky-note {
+  color: $white;
+}
+.sticky-note-orange {
+  background: $yellowNote;
+}
+.sticky-note-blue {
+  background: $blueNote;
+}
+.sticky-note-purple {
+  background: $purpleNote;
+}
 //GENERAL CLASSES END
-.main {
+.main-starting-point {
   width: 100vw;
   background: $pink;
   position: relative;
@@ -122,416 +107,26 @@ ul {
       width: 80vw;
     }
   }
-  .navbar {
-    background: rgba(85, 190, 94, 0.3);
-    height: 7vh;
-    position: fixed;
-    bottom: 0.5rem;
-    left: 50%;
-    transform: translate(-50%);
-    width: 97vw;
-    border-radius: 0.8rem;
-    backdrop-filter: blur(3px) contrast(105%);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    ul {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      width: 11rem;
-    }
-    .nav-item {
-      color: $white;
-      font-size: 1.4rem;
-    }
-    .create-list-item-holder {
-      background: #c2e8be;
-      border-radius: 50%;
-      position: relative;
-      width: 4rem;
-      height: 4rem;
-      margin-top: -3rem;
-      -webkit-box-shadow: 0px 3px 25px -4px rgba(0, 0, 0, 0.25);
-      -moz-box-shadow: 0px 3px 25px -4px rgba(0, 0, 0, 0.25);
-      box-shadow: 0px 3px 25px -4px rgba(0, 0, 0, 0.25);
-      .create-list-item {
-        @include absoluteCenter;
-        color: $white;
-      }
-    }
-  }
-  @media (min-width: 768px) {
-    .navbar {
-      width: 78vw;
-      ul {
-        width: 20rem;
-      }
-    }
-  }
 }
 @media (max-width: 600px) {
-  .main {
+  .main-starting-point {
     width: 100vw;
   }
 }
-.auth-container {
+.layer {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  position: relative;
-  header {
-    position: relative;
-    height: 30vh;
-    z-index: 1;
-    h1 {
-      font-weight: bold;
-      padding: 1.5rem 3.5rem;
-      font-size: 5vmax;
-    }
-  }
-
-  .auth-body {
-    position: relative;
-  }
+  height: 100%;
+  -webkit-filter: blur(6px);
+  filter: blur(6px);
 }
+//NAVBAR
+@import "./partials/navbar";
 
-.form-container {
-  text-align: center;
-  h2 {
-    @include h2($greenMain, $fontFunky);
-    margin: 0;
-    padding: calc(2rem - 1vw);
-  }
-  .form-wrapper {
-    padding: calc(1rem - 1vw);
-    max-width: 24rem;
-    margin: 0 auto;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+@import "./partials/auth";
 
-    form {
-      width: 100%;
-      input {
-        @include shadow;
-        width: 100%;
-        height: 2.8rem;
-        border: none;
-        margin: 0.5rem 0;
-        border-radius: 0.8rem;
-        padding: 0.5rem;
-        &:focus,
-        &:active {
-          outline: none;
-          border: none;
-        }
-        &::placeholder {
-          color: $greyPlaceholder;
-          font-size: 0.9rem;
-        }
-      }
-      button {
-        width: 100%;
-        height: 2.8rem;
-        border: none;
-        background: $greenMain;
-        border-radius: 0.8rem;
-        color: #fff;
-        font-weight: 700;
-        font-size: 1.4rem;
-        margin-top: 0.4rem;
-        border: none;
-        @include shadow;
-        &:focus,
-        &:active {
-          outline: none;
-          border: none;
-        }
-      }
-      @media only screen and (min-width: 1240px) {
-        input,
-        button {
-          height: 3.3rem;
-        }
-      }
-    }
-    .toggle-form {
-      margin: 1rem 0 1rem 0;
-      cursor: pointer;
-      strong {
-        color: $greenMain;
-        font-weight: 700;
-        margin-left: 0.2rem;
-      }
-    }
-  }
+@import "./partials/listItems";
 
-  .devider {
-    width: 12rem;
-    position: relative;
-    margin: 2rem 0;
-    .left-devider {
-      position: absolute;
-      border-bottom: 1px solid #000;
-      width: 4.5rem;
-    }
-    span {
-      width: 2.5rem;
-      @include absoluteCenter;
-    }
-    .right-devider {
-      position: absolute;
-      border-bottom: 1px solid #000;
-      width: 4.5rem;
-      right: 0;
-    }
-  }
-  .social-media-options {
-    display: flex;
-    position: relative;
-    justify-content: center;
-  }
-  .social-media-option {
-    width: 3rem;
-    height: 3rem;
-    @include shadow;
-    background: $white;
-    border-radius: 0.8rem;
-    position: relative;
-    margin: 0.6rem;
-    img {
-      @include absoluteCenter;
-    }
-  }
-}
-
-.list-items-container {
-  height: 65vh;
-  overflow-y: scroll;
-  padding: 0.5rem;
-}
-.list-items-container::-webkit-scrollbar {
-  display: none;
-}
-.list-top-container {
-  .white-board {
-    width: 100vw;
-    position: absolute;
-    bottom: 0;
-    padding: 0.5rem;
-  }
-  .list-item-container {
-    max-width: 35rem;
-    margin: 3rem auto;
-    border-radius:1rem;
-    @include shadow;
-    background: $white;
-    position: relative;
-    .check-circle {
-      color: $devider;
-      font-size: 3rem;
-      align-self: center;
-      margin: 0 0.5rem;
-    }
-    .edit-list-item-holder {
-      padding: 0.9rem;
-      border-radius: 50%;
-      background-color: $redDelete;
-      position: absolute;
-      right: -0.3rem;
-      top: -0.5rem;
-      .edit-item {
-        color: $white;
-        @include absoluteCenter;
-        font-size: 0.7rem;
-      }
-    }
-  }
-  .item-header {
-    padding: 0.5rem 0;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    img {
-      margin: 0.5rem 0.5rem;
-      width: 3rem;
-      height: 3rem;
-      align-self: center;
-    }
-  }
-  .item-description-holder {
-    align-self: center;
-    * {
-      margin: 0.4rem;
-    }
-    .edit-element-holder {
-      position: absolute;
-      left: 4rem;
-      top: -0.3rem;
-    }
-    h2 {
-      color: $fontColor;
-      margin-bottom: 0.4rem;
-      font-size: 0.9rem;
-    }
-  }
-  .notes-wrapper {
-    margin-top: 1.6rem;
-    .notes-holder {
-      display: flex;
-    }
-    .notes {
-      margin-bottom: 0.5rem;
-      margin-left: 0.4rem;
-    }
-    span {
-      display: inline-block;
-      background: $yellow;
-      // width: 1.7rem;
-      // height: 1.7rem;
-      padding: 0.8rem;
-      border-radius: 50%;
-      position: relative;
-      margin: 0 0.3rem;
-      .sticky-note {
-        font-size: 0.8rem;
-        color: $white;
-        @include absoluteCenter;
-      }
-    }
-  }
-  @media (min-width: 768px) {
-    .item-header {
-      img {
-        width: 5rem;
-        height: 5rem;
-      }
-    }
-    .item-description-holder {
-      h2 {
-        font-size: 1.8rem;
-      }
-      p {
-        font-size: 1.3rem;
-      }
-    }
-    .notes-wrapper {
-      P {
-        font-size: 1.3rem;
-      }
-      span {
-        padding: 1.2rem;
-        .sticky-note {
-          font-size: 1.1rem;
-        }
-      }
-    }
-    .list-item-container {
-      .check-circle {
-        font-size: 4.5rem;
-      }
-    }
-  }
-}
-.create-element{
-  padding:1rem;
-
-  .create-element-header{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    .btn-holder{
-      .heart-full{
-        color:$redHeart;
-        font-size:1.2rem;
-        margin:0 0.5rem;
-      }
-      button{
-        @include shadow;
-        background:$white;
-        border-radius:0.8rem;
-        display:flex;
-        padding: 0.5rem;
-        font-size: 1.1rem;
-      }
-    }
-  }
-  form{
-    margin-top:1.5rem;
-    .search-item-icon{
-      left: 0.5rem;
-      color: #c2e8be;
-      font-size: 1.8rem;
-      position: relative;
-      top: 0.7rem;
-    }
-    .search-item{
-      border:none;
-      border-bottom:2px solid $greenMain;
-      background:none;
-      width:100%;
-      position: relative;
-      padding: 0 0 0.5rem 3rem;
-      &::placeholder{
-        font-size:1rem;
-        color:$greyPlaceholder;
-
-      }
-    }
-  }
-  .item-creator{
-    max-width:30rem;
-    @include shadow;
-    border-radius:1rem;
-    display:flex;
-    justify-content: space-around;
-    padding:1rem;
-    margin:3rem 0;
-    background:$white;
-    .left-part{
-      display: grid;
-    place-content: center;
-      img{
-        width:5rem;
-        height:5rem;
-      }
-    }
-    .right-part{
-      .item-caption-holder{
-     position: relative;
-        input{
-          font-size:1.2rem;
-          width:3rem;
-          font-weight:600;
-          color:$fontColor;
-        }
-      }
-      .quantity-wrapper{
-        display:flex;
-        flex-direction:column;
-        margin:1rem 0;
-        label{
-          font-size:0.8rem;
-          color:$fontColor;
-          margin:0.5rem 0;
-        }
-      }
-      .quantity-holder{
-        display:flex;
-        input{
-          width:3rem;
-          padding-right:0.3rem;
-          text-align: center;
-          font-size:1.5rem;
-          color:$greenMain;
-        }
-        .item-controller{
-          @include shadow;
-          padding:1rem;
-          border-radius: 0.8rem;
-          color:$greenMain;
-        }
-      }
-    }
-  }
-}
-
+@import "./partials//createItem";

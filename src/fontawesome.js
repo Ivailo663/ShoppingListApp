@@ -22,7 +22,7 @@ import {
   faBars,
   faHeart,
   faSearch,
-  faPen
+  faPen,
 } from "@fortawesome/free-solid-svg-icons";
 
 console.log(fas);
