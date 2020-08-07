@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import eggs from "../../styles/gallery/products/eggs.png";
 import "@fortawesome/free-solid-svg-icons";
 import CreateNoteModal from "../modals/CreateNoteModal";
-import BlurLayer from "../helperComponents/BlurLayer";
+import { createItemActions } from "../../actions";
 
 const CreateItem = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(true);
+  useEffect(() => {
+    console.log(props, "hey");
+  });
   return (
     <>
       <div className="create-element">
@@ -71,7 +75,7 @@ const CreateItem = (props) => {
             </div>
           </div>
         </div>
-        <div className="add-notes">
+        <div className="add-notes" onClick={props.openCreateNoteModal}>
           <div className="add-notes-btn">
             Add notes
             <div className="notes-holder">
@@ -88,10 +92,16 @@ const CreateItem = (props) => {
           </div>
         </div>
       </div>
-      {isModalOpen ? <BlurLayer /> : null}
-      {/* {isModalOpen ? <CreateNoteModal /> : null} */}
+      {isModalOpen ? <CreateNoteModal /> : null}
     </>
   );
 };
-
-export default CreateItem;
+const mapStateToProps = (state) => {
+  return {
+    isCreateNoteModalOpen: state.createItem.isCreateNoteModalOpen,
+  };
+};
+const actionCreators = {
+  openCreateNoteModal: createItemActions.openCreateNoteModal,
+};
+export default connect(mapStateToProps, actionCreators)(CreateItem);
