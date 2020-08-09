@@ -1,0 +1,129 @@
+.auth-container {
+  width: 100%;
+  position: relative;
+  header {
+    position: relative;
+    height: 30vh;
+    z-index: 1;
+    h1 {
+      font-weight: bold;
+      padding: 1.5rem 3.5rem;
+      font-size: 5vmax;
+    }
+  }
+
+  .auth-body {
+    position: relative;
+  }
+}
+
+.form-container {
+  text-align: center;
+  h2 {
+    @include h2($greenMain, $fontFunky);
+    margin: 0;
+    padding: calc(2rem - 1vw);
+  }
+  .form-wrapper {
+    padding: calc(1rem - 1vw);
+    max-width: 24rem;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    form {
+      width: 100%;
+      input {
+        @include shadow;
+        width: 100%;
+        height: 2.8rem;
+        border: none;
+        margin: 0.5rem 0;
+        border-radius: 0.8rem;
+        padding: 0.5rem;
+        background: $white;
+        &:focus,
+        &:active {
+          outline: none;
+          border: none;
+        }
+        &::placeholder {
+          color: $greyPlaceholder;
+          font-size: 0.9rem;
+        }
+      }
+      button {
+        width: 100%;
+        height: 2.8rem;
+        border: none;
+        background: $greenMain;
+        border-radius: 0.8rem;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.4rem;
+        margin-top: 0.4rem;
+        border: none;
+        @include shadow;
+        &:focus,
+        &:active {
+          outline: none;
+          border: none;
+        }
+      }
+      @media only screen and (min-width: 1240px) {
+        input,
+        button {
+          height: 3.3rem;
+        }
+      }
+    }
+    .toggle-form {
+      margin: 1rem 0 1rem 0;
+      cursor: pointer;
+      strong {
+        color: $greenMain;
+        font-weight: 700;
+        margin-left: 0.2rem;
+      }
+    }
+  }
+
+  .devider {
+    width: 12rem;
+    position: relative;
+    margin: 2rem 0;
+    .left-devider {
+      position: absolute;
+      border-bottom: 1px solid #000;
+      width: 4.5rem;
+    }
+    span {
+      width: 2.5rem;
+      @include absoluteCenter;
+    }
+    .right-devider {
+      position: absolute;
+      border-bottom: 1px solid #000;
+      width: 4.5rem;
+      right: 0;
+    }
+  }
+  .social-media-options {
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+  .social-media-option {
+    width: 3rem;
+    height: 3rem;
+    @include shadow;
+    background: $white;
+    border-radius: 0.8rem;
+    position: relative;
+    margin: 0.6rem;
+    img {
+      @include absoluteCenter;
+    }
+  }
+}

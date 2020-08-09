@@ -1,0 +1,146 @@
+.create-element {
+  padding: 1rem;
+
+  .create-element-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .btn-holder {
+      .heart-full {
+        color: $redHeart;
+        font-size: 1.2rem;
+        margin: 0 0.5rem;
+      }
+      button {
+        @include shadow;
+        background: $white;
+        border-radius: 0.8rem;
+        display: flex;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  form {
+    max-width: 35rem;
+    margin: 1.5rem auto;
+    .search-item-icon {
+      left: 0.5rem;
+      color: #c2e8be;
+      font-size: 1.8rem;
+      position: relative;
+      top: 1rem;
+    }
+    .search-item {
+      border: none;
+      border-bottom: 2px solid $greenMain;
+      background: none;
+      width: 100%;
+      position: relative;
+      padding: 0 0 0.5rem 3rem;
+      &::placeholder {
+        font-size: 1rem;
+        color: $greyPlaceholder;
+      }
+    }
+  }
+  .item-creator {
+    max-width: 30rem;
+    @include shadow;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+    margin: 3rem auto;
+    margin-bottom: 1.7rem;
+    background: $white;
+    .left-part {
+      display: grid;
+      place-content: center;
+      img {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+    .right-part {
+      .item-caption-holder {
+        position: relative;
+        input {
+          font-size: 1.2rem;
+          width: 3rem;
+          font-weight: 600;
+          color: $fontColor;
+        }
+      }
+      .quantity-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+        label {
+          font-size: 0.8rem;
+          color: $fontColor;
+          margin: 0.5rem 0;
+        }
+      }
+      .quantity-holder {
+        display: flex;
+        input {
+          width: 3rem;
+          padding-right: 0.3rem;
+          text-align: center;
+          font-size: 1.5rem;
+          color: $greenMain;
+        }
+        .item-controller {
+          @include shadow;
+          padding: 1rem;
+          border-radius: 0.8rem;
+          color: $greenMain;
+        }
+      }
+    }
+  }
+  @media (min-width: 576px) {
+    .item-creator {
+      margin-bottom: 6.7rem;
+    }
+  }
+}
+.add-notes-btn {
+  text-align: center;
+  font-weight: 600;
+  color: $fontColor;
+  display: flex;
+  flex-direction: column;
+  width: 6rem;
+  margin: 0 auto;
+}
+.notes-holder {
+  margin-top: 0.5rem;
+  display: flex;
+  span {
+    display: inline-block;
+    padding: 0.8rem;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 0.2rem;
+  }
+  .sticky-note {
+    font-size: 0.8rem;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .sticky-note-orange {
+    background: $yellowNote;
+  }
+
+  .sticky-note-blue {
+    background: $blueNote;
+  }
+  .sticky-note-purple {
+    background: $purpleNote;
+  }
+}

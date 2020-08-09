@@ -1,0 +1,29 @@
+.cheese {
+  position: absolute;
+  width: 30vmin;
+  left: calc(15% - 2rem);
+  top: 3rem;
+}
+
+.salat {
+  position: absolute;
+
+  width: 30vmin;
+  right: calc(0% + 1rem);
+  top: 12rem;
+}
+.tomato {
+  position: absolute;
+  opacity: 0.7;
+  width: 35vmin;
+  left: calc(3% - 1rem);
+  bottom: calc(21% - 2rem);
+}
+.bananas {
+  position: absolute;
+  opacity: 0.6;
+  width: 35vmin;
+  right: 10rem;
+  right: calc(0% + 1rem);
+  bottom: 2rem;
+}
