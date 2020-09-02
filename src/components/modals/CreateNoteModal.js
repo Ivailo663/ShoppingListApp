@@ -7,8 +7,8 @@ import { createItemActions } from "../../actions";
 
 const CreateNoteModal = (props) => {
   return (
-    <div className="create-note-modal">
-      <div className="create-note-modal-container ">
+    <div className="modal">
+      <div className="modal-container create-node-modal ">
         <ul className="notes-holder">
           <li>
             <label htmlFor="note-txt-area">
@@ -45,7 +45,9 @@ const CreateNoteModal = (props) => {
               defaultValue="JHADJSAJHDSAKJDKJASDKJHASKDKJHSADDSA"
             />
           </form>
-          <button>create</button>
+          <button>
+            <span className="btn-txt">create</span>
+          </button>
         </div>
       </div>
     </div>

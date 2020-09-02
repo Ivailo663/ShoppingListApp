@@ -1,4 +1,4 @@
-.create-note-modal {
+.modal {
   width: 100%;
   height: 100%;
   top: 0;
@@ -6,25 +6,29 @@
   position: fixed;
 }
 
-.create-note-modal-container {
+.create-node-modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+}
+.modal-container {
   .close-holder {
     position: absolute;
     right: 1rem;
     top: 0.5rem;
     .close {
       font-size: 1.5rem;
-      color: $blackClose;
+      color: $black;
     }
   }
 }
 .note-txt-area-wrapper {
   position: relative;
   margin-top: 0.8rem;
+  path {
+    color: $white;
+  }
   #note-txt-area {
     //   position: relative;
     background: $blueNote;
@@ -45,7 +49,6 @@
     padding: 0.3rem 2.5rem;
     border-radius: 0.8rem;
     font-size: 1.3rem;
-    font-weight: 600;
     color: $fontColor;
   }
 }

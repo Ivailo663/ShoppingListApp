@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 const BlurLayer = (props) => {
   return (
-    <div className={!props.isCreateNoteModalOpen ? "layer" : null}>
+    <div className={props.isCreateNoteModalOpen ? "layer" : null}>
       {props.children}
     </div>
   );

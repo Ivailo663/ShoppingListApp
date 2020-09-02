@@ -34,14 +34,26 @@ p {
 .funky-font {
   font-family: $fontFunky;
 }
-button {
+button,
+.close,
+.close-holder,
+.btn {
   border: none;
   background: none;
+  font-weight: 400;
+  cursor: pointer;
+  color: $black;
+  outline: none;
+  .btn-txt {
+    vertical-align: super;
+    color: $black;
+  }
 }
 .back-btn {
-  color: $fontColor;
+  color: $black;
+  font-size: 1.2rem;
   .back-arrow {
-    color: $fontColor;
+    color: $black;
   }
 }
 .icon-holder {
@@ -129,6 +141,8 @@ ul {
 
 @import "./partials/listItems";
 
-@import "./partials//createItem";
+@import "./partials/createItem";
 
-@import "./partials//createNoteModal";
+@import "./partials/createNoteModal";
+
+@import "./partials/editItem";

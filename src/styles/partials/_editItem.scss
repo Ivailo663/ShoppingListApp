@@ -1,0 +1,38 @@
+.controllers-wrapper {
+  display: flex;
+  @include absoluteCenter;
+  * {
+    margin: 0 0.5rem;
+  }
+
+  .controller {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    span {
+      @include absoluteCenter;
+      margin: 0;
+      svg {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .controller:nth-child(1) {
+    border: 2px solid $blueNote;
+    span {
+      left: 55%;
+    }
+    path {
+      color: $blueNote;
+    }
+  }
+  .controller:nth-child(2) {
+    border: 2px solid $redHeart;
+    color: $redHeart;
+  }
+  .controller:nth-child(3) {
+    border: 2px solid $black;
+    color: $black;
+  }
+}

@@ -30,7 +30,7 @@ class App extends Component {
             </div>
           </div>
         </BlurLayer>
-        {!this.props.isCreateNoteModalOpen ? <CreateNoteModal /> : null}
+        {this.props.isCreateNoteModalOpen ? <CreateNoteModal /> : null}
       </>
     );
   }

@@ -13,26 +13,15 @@ const CreateItem = (props) => {
   return (
     <>
       <div className="create-element">
-        <div
-          className="create-element-header"
-          onClick={() => props.switch("board")}
-        >
-          <div className="back-btn">
+        <div className="create-element-header">
+          <div className="back-btn btn" onClick={() => props.switch("board")}>
             <span>
               <FontAwesomeIcon icon="chevron-left" className="back-arrow" />
             </span>{" "}
             back
           </div>
           <div className="btn-holder">
-            <button>
-              <span>
-                <FontAwesomeIcon
-                  icon={["fas", "heart"]}
-                  className="heart-full"
-                />
-              </span>
-              favorites
-            </button>
+            <button>favorites</button>
           </div>
         </div>
 

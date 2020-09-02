@@ -4,8 +4,8 @@ import {
   faCheckCircle as faCheckCircleRegular,
   faUser,
   faClipboard,
+  faHeart as outlineHeart,
 } from "@fortawesome/free-regular-svg-icons";
-
 import {
   fas,
   faHome,
@@ -23,6 +23,8 @@ import {
   faHeart,
   faSearch,
   faPen,
+  faEdit,
+  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
 console.log(fas);
@@ -44,5 +46,8 @@ library.add(
   faBars,
   faHeart,
   faSearch,
-  faPen
+  faPen,
+  faEdit,
+  outlineHeart,
+  faTrash
 );

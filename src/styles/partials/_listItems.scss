@@ -2,6 +2,7 @@
   height: 65vh;
   overflow-y: scroll;
   padding: 0.5rem;
+  position: relative;
 }
 .list-items-container::-webkit-scrollbar {
   display: none;
@@ -14,6 +15,7 @@
     padding: 0.5rem;
   }
   .list-item-container {
+    height: 8rem;
     max-width: 35rem;
     margin: 3rem auto;
     border-radius: 1rem;
@@ -27,6 +29,7 @@
       margin: 0 0.5rem;
     }
     .edit-list-item-holder {
+      z-index: 5;
       padding: 0.9rem;
       border-radius: 50%;
       background-color: $redDelete;
