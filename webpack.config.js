@@ -4,11 +4,11 @@ const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
   filename: "./index.html",
 });
-var path = require('path');
+var path = require("path");
 module.exports = {
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -16,7 +16,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
           },
         ],
       },

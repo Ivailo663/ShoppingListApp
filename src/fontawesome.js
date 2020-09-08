@@ -25,6 +25,7 @@ import {
   faPen,
   faEdit,
   faTrash,
+  faCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 console.log(fas);
@@ -49,5 +50,6 @@ library.add(
   faPen,
   faEdit,
   outlineHeart,
-  faTrash
+  faTrash,
+  faCircle
 );

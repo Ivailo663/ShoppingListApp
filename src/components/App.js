@@ -18,15 +18,14 @@ class App extends Component {
         <BlurLayer>
           <div className="main-starting-point">
             <div className="main-inner">
-              <Router>
-                <Route exact path="/" component={Auth} />
-                <Route path="/main" component={Main} />
-              </Router>
-
               <img src={cheese} alt="cheese" className="cheese" />
               <img src={salat} alt="salat" className="salat" />
               <img src={tomato} alt="tomato" className="tomato" />
               <img src={bananas} alt="bananas" className="bananas" />
+              <Router>
+                <Route exact path="/" component={Auth} />
+                <Route path="/main" component={Main} />
+              </Router>
             </div>
           </div>
         </BlurLayer>

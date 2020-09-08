@@ -6,9 +6,7 @@ import EditItem from "./EditItem";
 
 function ListItem(props) {
   const [controllsOpen, setControllsOpen] = useState(false);
-  const log = () => {
-    console.log("hey");
-  };
+
   return (
     <>
       <div className="list-item-container">
@@ -16,181 +14,60 @@ function ListItem(props) {
           <EditItem close={() => setControllsOpen(false)} />
         ) : (
           <>
-            <div
-              className="edit-list-item-holder btn"
-              onClick={() => setControllsOpen(true)}
-            >
-              <FontAwesomeIcon icon="pencil-alt" className="edit-item" />
-            </div>
-            <div className="item-header">
+            <div className="item-body">
               <img src={eggs} alt="" />
               <div className="item-description-holder">
-                <h2>Eggs</h2>
+                <div className="item-name">
+                  <h3>Eggs</h3>
+                  <span>(2x)</span>
+                </div>
 
-                <p>2 mins ago</p>
-                <p>3 items</p>
-              </div>
-              <div className="notes-wrapper">
-                <p className="notes">notes</p>
-                <div className="notes-holder">
-                  <span>
-                    <FontAwesomeIcon
-                      icon="sticky-note"
-                      className="sticky-note"
-                    />
-                  </span>
-                  <span>
-                    <FontAwesomeIcon
-                      icon="sticky-note"
-                      className="sticky-note"
-                    />
-                  </span>
-                  <span>
-                    <FontAwesomeIcon
-                      icon="sticky-note"
-                      className="sticky-note"
-                    />
-                  </span>
+                <div className="timestamp-holder">
+                  <p>
+                    <strong className="created">Created:</strong>2 mins ago by{" "}
+                    <strong className="creator">@me</strong>
+                  </p>
+                </div>
+                <div className="notes-wrapper">
+                  <p className="notes">
+                    <strong>Notes:</strong>
+                  </p>
+                  <div className="">
+                    <span>
+                      <FontAwesomeIcon
+                        icon="sticky-note"
+                        className="sticky-note"
+                      />
+                    </span>
+                    <span>
+                      <FontAwesomeIcon
+                        icon="sticky-note"
+                        className="sticky-note"
+                      />
+                    </span>
+                    <span>
+                      <FontAwesomeIcon
+                        icon="sticky-note"
+                        className="sticky-note"
+                      />
+                    </span>
+                  </div>
                 </div>
               </div>
+
               <FontAwesomeIcon
                 icon={["far", "check-circle"]}
                 className="check-circle"
               />
+              <div
+                className="edit-list-item-holder btn"
+                onClick={() => setControllsOpen(true)}
+              >
+                <FontAwesomeIcon icon="pencil-alt" className="edit-item" />
+              </div>
             </div>
           </>
         )}
-      </div>
-      <div className="list-item-container">
-        <div className="edit-list-item-holder">
-          <FontAwesomeIcon icon="pencil-alt" className="edit-item" />
-        </div>
-
-        <div className="item-header">
-          <img src={eggs} alt="" />
-          <div className="item-description-holder">
-            <h2>Eggs</h2>
-
-            <p>2 mins ago</p>
-            <p>3 items</p>
-          </div>
-          <div className="notes-wrapper">
-            <p className="notes">notes</p>
-            <div className="notes-holder">
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-            </div>
-          </div>
-          <FontAwesomeIcon
-            icon={["far", "check-circle"]}
-            className="check-circle"
-          />
-        </div>
-      </div>
-      <div className="list-item-container">
-        <div className="edit-list-item-holder">
-          <FontAwesomeIcon icon="pencil-alt" className="edit-item" />
-        </div>
-
-        <div className="item-header">
-          <img src={eggs} alt="" />
-          <div className="item-description-holder">
-            <h2>Eggs</h2>
-
-            <p>2 mins ago</p>
-            <p>3 items</p>
-          </div>
-          <div className="notes-wrapper">
-            <p className="notes">notes</p>
-            <div className="notes-holder">
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-            </div>
-          </div>
-          <FontAwesomeIcon
-            icon={["far", "check-circle"]}
-            className="check-circle"
-          />
-        </div>
-      </div>
-      <div className="list-item-container">
-        <div className="edit-list-item-holder">
-          <FontAwesomeIcon icon="pencil-alt" className="edit-item" />
-        </div>
-
-        <div className="item-header">
-          <img src={eggs} alt="" />
-          <div className="item-description-holder">
-            <h2>Eggs</h2>
-
-            <p>2 mins ago</p>
-            <p>3 items</p>
-          </div>
-          <div className="notes-wrapper">
-            <p className="notes">notes</p>
-            <div className="notes-holder">
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-            </div>
-          </div>
-          <FontAwesomeIcon
-            icon={["far", "check-circle"]}
-            className="check-circle"
-          />
-        </div>
-      </div>
-      <div className="list-item-container">
-        <span className="edit-list-item-holder">
-          <FontAwesomeIcon icon="pencil-alt" className="edit-item" />
-        </span>
-
-        <div className="item-header">
-          <img src={eggs} alt="" />
-          <div className="item-description-holder">
-            <h2>Eggs</h2>
-            <p>2 mins ago</p>
-            <p>3 items</p>
-          </div>
-          <div className="notes-wrapper">
-            <p className="notes">notes</p>
-            <div className="notes-holder">
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-              <span>
-                <FontAwesomeIcon icon="sticky-note" className="sticky-note" />
-              </span>
-            </div>
-          </div>
-          <FontAwesomeIcon
-            icon={["far", "check-circle"]}
-            className="check-circle"
-          />
-        </div>
       </div>
     </>
   );

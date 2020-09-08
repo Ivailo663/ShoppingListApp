@@ -1,52 +1,59 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Board from "../mainComponents/Board";
-import CreateItem from "../mainComponents/CreateItem";
 import "@fortawesome/free-solid-svg-icons";
+import { connect } from "react-redux";
+import { routeBetweenComps } from "../../actions";
+import Board from "../Board";
+import CreateItem from "../CreateItem";
 import Navbar from "../layoutComponents/Navbar";
-import Layer from "../helperComponents/BlurLayer";
-import BlurLayer from "../helperComponents/BlurLayer";
 
 class Main extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      component: "create-item",
+      component: "board",
       header: "My List",
     };
   }
   switchComponent = (switchTo) => {
     this.setState({ component: switchTo });
-    console.log(this.state.component, "component");
+  };
+  componentDidMount = () => {
+    console.log(this.props);
   };
   displayComponents = () => {
-    const { component } = this.state;
-
+    const { component } = this.props;
     switch (component) {
       case "board":
-        return <Board switch={(switchTo) => this.switchComponent(switchTo)} />;
+        return <Board />;
       case "create-item":
-        return (
-          <CreateItem switch={(switchTo) => this.switchComponent(switchTo)} />
-        );
+        return <CreateItem switch={this.props.toBoard} />;
     }
   };
   render() {
     const { header } = this.state;
     return (
-      <div className="list-top-container">
+      <div>
         <div className="head"></div>
 
         <div className="white-board">
           <h1 className="component-header funky-font">{header}</h1>
           {this.displayComponents()}
 
-          <Navbar switch={(switchTo) => this.switchComponent(switchTo)} />
+          <Navbar switch={this.props.toCreateItem} />
         </div>
       </div>
     );
   }
 }
-
-export default Main;
+const mapStateToProps = (state) => {
+  return {
+    component: state.routeBetweenComps.component,
+  };
+};
+const actionCreator = {
+  toCreateItem: routeBetweenComps.toCreateItem,
+  toBoard: routeBetweenComps.toBoard,
+};
+export default connect(mapStateToProps, actionCreator)(Main);

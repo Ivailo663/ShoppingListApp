@@ -7,123 +7,97 @@
 .list-items-container::-webkit-scrollbar {
   display: none;
 }
-.list-top-container {
-  .white-board {
-    width: 100vw;
-    position: absolute;
-    bottom: 0;
-    padding: 0.5rem;
-  }
-  .list-item-container {
-    height: 8rem;
-    max-width: 35rem;
-    margin: 3rem auto;
-    border-radius: 1rem;
-    @include shadow;
-    background: $white;
-    position: relative;
-    .check-circle {
-      color: $devider;
-      font-size: 3rem;
-      align-self: center;
-      margin: 0 0.5rem;
-    }
-    .edit-list-item-holder {
-      z-index: 5;
-      padding: 0.9rem;
-      border-radius: 50%;
-      background-color: $redDelete;
-      position: absolute;
-      right: -0.3rem;
-      top: -0.5rem;
-      .edit-item {
-        color: $white;
-        @include absoluteCenter;
-        font-size: 0.7rem;
-      }
-    }
-  }
-  .item-header {
-    padding: 0.5rem 0;
-    position: relative;
+
+.list-item-container {
+  height: 9rem;
+  max-width: 35rem;
+  margin: 3rem auto;
+  border-radius: 1rem;
+  @include shadow;
+  background: $white;
+  position: relative;
+  display: flex;
+  padding: 1rem;
+
+  .item-body {
     display: flex;
-    justify-content: space-around;
-    img {
-      margin: 0.5rem 0.5rem;
-      width: 3rem;
-      height: 3rem;
-      align-self: center;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    .item-description-holder {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 0 0.5rem;
+      border-left: 1px solid #dcdcdc;
     }
   }
-  .item-description-holder {
-    align-self: center;
-    * {
-      margin: 0.4rem;
+  img {
+    height: 4.2rem;
+    width: 4.2rem;
+    border-radius: 50%;
+  }
+  .item-name {
+    h3 {
+      display: inline;
+      margin-right: 1rem;
     }
-    .edit-element-holder {
-      position: absolute;
-      left: 4rem;
-      top: -0.3rem;
+  }
+  .timestamp-holder {
+    p {
+      font-size: 0.76rem;
     }
-    h2 {
-      color: $fontColor;
-      margin-bottom: 0.4rem;
-      font-size: 0.9rem;
+    .created {
+      margin-right: 0.5rem;
+    }
+    .creator {
+      color: $darkBlue;
     }
   }
   .notes-wrapper {
-    margin-top: 1.6rem;
-    .notes-holder {
-      display: flex;
-    }
-    .notes {
-      margin-bottom: 0.5rem;
-      margin-left: 0.4rem;
-    }
-    span {
-      display: inline-block;
-      background: $yellowNote;
-      padding: 0.8rem;
-      border-radius: 50%;
-      position: relative;
-      margin: 0 0.3rem;
-      .sticky-note {
-        font-size: 0.8rem;
-        color: $white;
-        @include absoluteCenter;
-      }
+    display: flex;
+    align-items: center;
+  }
+
+  .edit-list-item-holder {
+    z-index: 5;
+    padding: 0.9rem;
+    border-radius: 50%;
+    background-color: $redDelete;
+    position: absolute;
+    right: -0.3rem;
+    top: -0.5rem;
+    .edit-item {
+      color: $white;
+      @include absoluteCenter;
+      font-size: 0.7rem;
     }
   }
+  .check-circle {
+    color: $devider;
+    font-size: 3rem;
+    align-self: center;
+  }
   @media (min-width: 768px) {
-    .item-header {
-      img {
-        width: 5rem;
-        height: 5rem;
+    .timestamp-holder {
+      p {
+        font-size: 1rem;
       }
+      .created {
+        font-size: 1rem;
+        margin-right: 0.9rem;
+      }
+    }
+    img {
+      width: 7rem;
+      height: 7rem;
+    }
+    .check-circle {
+      font-size: 5rem;
     }
     .item-description-holder {
-      h2 {
-        font-size: 1.8rem;
-      }
-      p {
-        font-size: 1.3rem;
-      }
-    }
-    .notes-wrapper {
-      P {
-        font-size: 1.3rem;
-      }
-      span {
-        padding: 1.2rem;
-        .sticky-note {
-          font-size: 1.1rem;
-        }
-      }
-    }
-    .list-item-container {
-      .check-circle {
-        font-size: 4.5rem;
-      }
+      padding: 0 1.2rem !important;
     }
   }
 }

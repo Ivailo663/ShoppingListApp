@@ -49,6 +49,26 @@ button,
     color: $black;
   }
 }
+.main-btn {
+  min-width: 6.5rem;
+  padding: 0.5rem 0;
+  border-radius: 0.8rem;
+  color: #ffffff;
+  font-size: 1rem;
+  @include shadow;
+}
+.red-btn {
+  background: $redHeart;
+}
+.green-btn {
+  background: $greenMain;
+}
+.text-btn {
+  box-shadow: none;
+  background: transparent;
+  border: none;
+  color: $redHeart;
+}
 .back-btn {
   color: $black;
   font-size: 1.2rem;
@@ -56,13 +76,7 @@ button,
     color: $black;
   }
 }
-.icon-holder {
-  position: absolute;
-  right: 1rem;
-  .edit {
-    color: $fontColor;
-  }
-}
+
 input {
   background: none;
   outline: none;
@@ -72,7 +86,10 @@ input {
 .white-board {
   @include whiteBoard;
   padding: 5rem 0.5rem 0 0.5rem;
-  position: relative;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  padding: 0.5rem;
 }
 .component-header {
   color: $white;
@@ -102,10 +119,13 @@ ul {
 .sticky-note-purple {
   background: $purpleNote;
 }
+.btn-icon-offset {
+  margin-right: 0.3rem;
+}
 //GENERAL CLASSES END
 .main-starting-point {
   width: 100vw;
-  background: $pink;
+  background: $background;
   position: relative;
 
   .main-inner {
@@ -146,3 +166,19 @@ ul {
 @import "./partials/createNoteModal";
 
 @import "./partials/editItem";
+
+.no-results-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  P {
+    color: $fontColor;
+    font-size: 1.1rem;
+  }
+  span {
+    margin: 0.5rem 0;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: $darkGreen;
+  }
+}

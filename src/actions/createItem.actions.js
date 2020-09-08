@@ -1,8 +1,8 @@
-import { createItemConstants } from "../constants";
+import constants from "../constants/constants";
 
 const openCreateNoteModal = () => {
   return {
-    type: createItemConstants.OPEN_CREATE_NOTE_MODAL,
+    type: constants.OPEN_CREATE_NOTE_MODAL,
   };
 };
 

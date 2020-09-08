@@ -1,11 +1,11 @@
-import { createItemConstants } from "../constants";
+import constants from "../constants/constants";
 const intialState = {
   isCreateNoteModalOpen: false,
 };
 
 const createItem = (state = intialState, action) => {
   switch (action.type) {
-    case createItemConstants.OPEN_CREATE_NOTE_MODAL:
+    case constants.OPEN_CREATE_NOTE_MODAL:
       return {
         ...state,
         isCreateNoteModalOpen: !state.isCreateNoteModalOpen,
