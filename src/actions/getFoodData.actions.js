@@ -1,5 +1,5 @@
 import constants from "../constants/constants";
-import getData from "../services/services";
+import { services } from "../services/services";
 import { text } from "@fortawesome/fontawesome-svg-core";
 
 const getFoodData = (query) => {
@@ -27,7 +27,8 @@ const getFoodData = (query) => {
   };
   return async (dispatch) => {
     dispatch(getDataRequest());
-    getData(query)
+    services
+      .getData(query)
       .then((data) => dispatch(getDataSuccess(data.data)))
       .catch((err) => dispatch(getDataFailuer(err)));
   };

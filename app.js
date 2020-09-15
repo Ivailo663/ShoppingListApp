@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3002;
 var path = require("path");
 dotenv.config({ path: "./config.env" });
 const DB = process.env.DATABASE;
+const userSchema = require("./server/Schemas/usersSchema");
 
 mongoose
   .connect(DB, {
@@ -20,20 +21,24 @@ mongoose
   })
   .catch((err) => console.log(err, "ERROR"));
 
-const mySchema = new mongoose.Schema({
-  name: String,
-  age: Number,
-});
+// const mySchema = new mongoose.Schema({
+//   name: String,
+//   age: Number,
+// });
 
-const Model = mongoose.model("Model", mySchema);
+const User = mongoose.model("User", userSchema);
 
-// Model.create({ name: "Dimitar", age: 27 }).then(console.log("all good"));
-const myFunc = async () => {
-  const res = await Model.find({ age: { $gte: 25 } });
-  console.log(res, "??");
-};
+User.create({
+  username: "Ivo",
+  email: "ivailo663.com",
+}).then(console.log("all good"));
 
-myFunc();
+// const myFunc = async () => {
+//   const res = await Model.find({ age: { $gte: 25 } });
+//   console.log(res, "??");
+// };
+
+// myFunc();
 
 app.use(express.static("./dist", { index: "index.html" }));
 

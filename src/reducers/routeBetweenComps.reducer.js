@@ -1,7 +1,7 @@
 import routes from "../constants/routs";
 
 const initialState = {
-  component: "create-item",
+  component: "board",
 };
 const routeBetweenComps = (state = initialState, action) => {
   switch (action.type) {
