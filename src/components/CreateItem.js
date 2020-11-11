@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import eggs from "../styles/gallery/products/eggs.png";
@@ -6,11 +6,23 @@ import "@fortawesome/free-solid-svg-icons";
 import { createItemActions, getFoodData } from "../actions";
 import Button from "../components/layoutComponents/Button";
 import NoResults from "../components/layoutComponents/NoResults";
+import { call } from "file-loader";
 
 const CreateItem = (props) => {
   const [input, setInput] = useState(null);
-  const handleChange = (event) => setInput(event.target.value);
-  // useEffect(() => console.log(props.data, "PROPS"));
+  const inputRef = useRef();
+
+  const handleChange = (event) => {
+    setInput(event.target.value);
+  };
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (inputRef.current.value === input) props.getFoodData(input);
+    }, 500);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [input, inputRef]);
   const capitalize = (food) => {
     if (typeof food !== "string") return "";
     return food.charAt(0).toUpperCase() + food.slice(1);
@@ -25,12 +37,7 @@ const CreateItem = (props) => {
             cl={"text-btn"}
             click={() => props.switch("board")}
           />
-          <Button
-            icon={"heart"}
-            btn={"Favorites"}
-            cl={"green-btn"}
-            click={() => props.getFoodData(input)}
-          />
+          <Button icon={"heart"} btn={"Favorites"} cl={"green-btn"} />
         </div>
 
         <form>
@@ -43,6 +50,7 @@ const CreateItem = (props) => {
             id="search-item"
             placeholder="Type the product here"
             onChange={(event) => handleChange(event)}
+            ref={inputRef}
           />
         </form>
         {props.data ? (
@@ -57,10 +65,7 @@ const CreateItem = (props) => {
                   <p>{capitalize(props.data.food)}</p>
                   {/* <p>hello item</p> */}
                 </div>
-                <div
-                  className="description-element"
-                  onClick={() => console.log(props.component)}
-                >
+                <div className="description-element">
                   <label>Quantity:</label>
                   <input type="number " defaultValue="0" />
                 </div>

@@ -6,7 +6,7 @@ import EditItem from "./EditItem";
 
 function ListItem(props) {
   const [controllsOpen, setControllsOpen] = useState(false);
-
+  const [list, setList] = useState([{ name: "ivaylo" }, { name: "dimitar" }]);
   return (
     <>
       <div className="list-item-container">
@@ -70,6 +70,7 @@ function ListItem(props) {
         )}
       </div>
     </>
+    // list.map((el, index) => <h1 key={index}>{el.name}</h1>)
   );
 }
 

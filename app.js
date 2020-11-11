@@ -2,11 +2,14 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const PORT = process.env.PORT || 3002;
 var path = require("path");
 dotenv.config({ path: "./config.env" });
 const DB = process.env.DATABASE;
 const userSchema = require("./server/Schemas/usersSchema");
+
+app.use(express.json());
 
 mongoose
   .connect(DB, {
@@ -21,25 +24,22 @@ mongoose
   })
   .catch((err) => console.log(err, "ERROR"));
 
-// const mySchema = new mongoose.Schema({
-//   name: String,
-//   age: Number,
-// });
-
 const User = mongoose.model("User", userSchema);
 
-User.create({
-  username: "Ivo",
-  email: "ivailo663.com",
-}).then(console.log("all good"));
+const saveUser = async (user) => {
+  try {
+    await User.create(user);
+  } catch (err) {
+    console.log(err);
+  }
+};
+// saveUser();
 
-// const myFunc = async () => {
-//   const res = await Model.find({ age: { $gte: 25 } });
-//   console.log(res, "??");
-// };
-
-// myFunc();
-
+app.use(cors());
+app.post("/createUser", function (req, res) {
+  saveUser(req.body);
+  res.send("from BE");
+});
 app.use(express.static("./dist", { index: "index.html" }));
 
 app.get("/*", function (req, res) {

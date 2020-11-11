@@ -1,4 +1,5 @@
-import constants from "../constants";
+import constants from "../constants/constants";
+import { registration } from "../services/services";
 
 const loginUser = () => {
   const loginSuccess = () => {
@@ -7,15 +8,28 @@ const loginUser = () => {
   return (dispatch) => {};
 };
 
-const registerUser = () => {
-  const registerAttempt = () => {
-    return {};
+const registerUser = (user) => {
+  const registerRequest = () => {
+    return {
+      type: constants.REGISTER_USER_REQUEST,
+    };
   };
   const registerSuccess = () => {
-    return {};
+    return {
+      type: constants.REGISTER_USER_SUCCESS,
+    };
   };
-  return (dispatch) => {
-    dispatch(registerAttempt());
+  return async (dispatch) => {
+    // console.log(user, "USER??");
+    dispatch(registerRequest());
+    try {
+      await registration(user);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      console.log("all good");
+      dispatch(registerSuccess());
+    }
   };
 };
 
